@@ -1,8 +1,96 @@
+:root {
+  --off-white: #f7f7f7;
+  --outline: #e9e9e9;
+  --remove: #d93546;
+  --submit: #6cc883;
+  --add: #0079fe;
+}
+
 * {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  .form-container {
+    border: 1px solid var(--outline);
+    border-radius: 5px;
+    max-width: 85vw;
+    max-height: 85vh;
+    margin: 40px auto;
+    // display: flex;
+    // justify-content: center;
+
+    section {
+      header {
+        background-color: var(--off-white);
+        padding: 15px;
+      }
+
+      .space {
+        padding: 15px;
+      }
+
+      .contact-form {
+        width: 50%;
+
+        .button-wrapper {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+
+      .profile-form {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .half-field {   // <--- find a better className
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .field {
+        width: 100%;
+        margin: 10px;
+
+        label {
+          margin-bottom: 10px;
+          display: block;
+        }
+
+        input,
+        select {
+          border: 1px solid var(--outline);
+          border-radius: 3px;
+          padding: 8px;
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    .remove-contact-btn {
+      background-color: var(--remove);
+      margin: 10px;
+    }
+
+    .submit-btn {
+      background-color: var(--submit);
+      margin: 10px;
+    }
+
+    .add-contact-btn {
+      background-color: var(--add);
+    }
+
+    .button {
+      border: none;
+      border-radius: 3px;
+      padding: 8px;
+      color: white;
+    }
+  }
 }
