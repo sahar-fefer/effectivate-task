@@ -1,33 +1,30 @@
 import { useState } from "react";
+import useForm from "../useForm";
+import validate from '../validations';
 
 const Form = () => {
-    const [values, setValues] = useState({});
+    const [isUpload, setIsUpload] = useState(false);
 
-    const handleChange = (event) => {
-        // event.persist();
-        setValues(values => ({ ...values, [event.target.name]: event.target.value }));
-    }
+    const {
+        values,
+        errors,
+        handleChange,
+        handleSubmit,
+      } = useForm(upload, validate);
 
-    const handleSubmit = (event) => {
-        if (event) event.preventDefault();
-        const { userName, userOrganization, typeConnection, contactLabel, contactAddress } = values;
-        console.log('userName', userName ? userName : '');
-        console.log('userOrganization', userOrganization ? userOrganization : '');
-        console.log('typeConnection', typeConnection ? typeConnection : '');
-        console.log('contactLabel', contactLabel ? contactLabel : '');
-        console.log('contactAddress', contactAddress ? contactAddress : '');
-        localStorage.setItem('userName', userName ? userName : '');
-        localStorage.setItem('userOrganization', userOrganization ? userOrganization : '');
-        localStorage.setItem('typeConnection', typeConnection ? typeConnection : '');
-        localStorage.setItem('contactLabel', contactLabel ? contactLabel : '');
-        localStorage.setItem('contactAddress', contactAddress ? contactAddress : '');
-    };
+    function upload() {
+        setIsUpload(true)
+        console.log('upload!')
+      }
 
     return (
         <form onSubmit={handleSubmit} noValidate>
             <div>
                 <label htmlFor="userName">Name</label>
                 <input type="text" id="userName" name="userName" onChange={handleChange} value={values.userName || ''} required />
+                  {errors.userName && (
+                    <p className="is-error">{errors.userName}</p>
+                  )}
             </div>
             <div>
                 <label htmlFor="userOrganization">Organization</label>
@@ -43,10 +40,16 @@ const Form = () => {
             <div>
                 <label htmlFor="contactLabel">Contact Label</label>
                 <input type="text" id="contactLabel" name="contactLabel" onChange={handleChange} value={values.contactLabel || ''} required />
+                {errors.contactLabel && (
+                    <p className="is-error">{errors.contactLabel}</p>
+                  )}
             </div>
             <div>
                 <label htmlFor="contactAddress">Email/Phone No.</label>
                 <input type="text" id="contactAddress" name="contactAddress" onChange={handleChange} value={values.contactAddress || ''} required />
+                {errors.contactAddress && (
+                    <p className="is-error">{errors.contactAddress}</p>
+                  )}
             </div>
             <div>
                 <input type="submit" />
