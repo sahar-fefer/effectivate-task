@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useForm = (callback, validate) => {
-
+  const [isUpload, setIsUpload] = useState(false);
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [allContactsId, setAllContactsId] = useState([1]);
@@ -31,7 +31,7 @@ const useForm = (callback, validate) => {
     delete newValues[contactLabel];
     delete newValues[typeConnection];
     delete newValues[contactAddress];
-    setValues({...newValues});
+    setValues({ ...newValues });
   }
 
   const handleSubmit = (event) => {
@@ -46,11 +46,20 @@ const useForm = (callback, validate) => {
     setValues(values => ({ ...values, [event.target.name]: event.target.value }));
   };
 
+  const handleClear = (event) => {
+    setValues({});
+    setIsUpload(false)
+    setAllContactsId([1])
+  };
+
   return {
     handleAddContact,
     handleRemoveContact,
     handleChange,
     handleSubmit,
+    handleClear,
+    setIsUpload,
+    isUpload,
     allContactsId,
     values,
     errors,

@@ -1,20 +1,21 @@
-import { useState } from "react";
 import useForm from "../useForm";
 import validate from '../validations';
 import ContactForm from "./contactForm";
+import UploadedPopup from "./uploadedPopup";
 import ProfileForm from "./profileForm";
 
 const Form = () => {
-    const [isUpload, setIsUpload] = useState(false);
-
     const {
         values,
         errors,
         allContactsId,
+        isUpload,
+        setIsUpload,
         handleAddContact,
         handleRemoveContact,
         handleChange,
         handleSubmit,
+        handleClear,
     } = useForm(upload, validate);
 
     function upload() {
@@ -23,7 +24,7 @@ const Form = () => {
     }
 
     return (
-        <div className='form-container' onSubmit={handleSubmit} noValidate>
+        <div className={`form-container ${isUpload ? 'is-upload' : ''}`} onSubmit={handleSubmit} noValidate>
             <ProfileForm values={values} errors={errors} handleChange={handleChange} />
             <section>
                 <header>Contact Info</header>
@@ -37,8 +38,11 @@ const Form = () => {
                 <button onClick={handleAddContact} className="button add-contact-btn" >Add Contact</button>
                 <button className="button submit-btn" onClick={handleSubmit}>Save User Profile</button>
             </div>
+            {
+                isUpload &&
+                <UploadedPopup values={values} allContactsId={allContactsId} handleClear={handleClear} />
+            }
         </div>
     );
 }
-
 export default Form;
