@@ -1,6 +1,6 @@
 const ProfileForm = ({ values, errors, handleChange }) => {
     return (
-        <section className='box'>
+        <section>
             <header>
                 User Profile
             </header>

@@ -19,6 +19,13 @@
   max-height: 85vh;
   margin: 40px auto;
 }
+* .form-container .contact-form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 * .form-container section header {
   background-color: var(--off-white);
   padding: 15px;

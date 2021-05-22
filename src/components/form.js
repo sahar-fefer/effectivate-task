@@ -10,6 +10,9 @@ const Form = () => {
     const {
         values,
         errors,
+        allContactsId,
+        handleAddContact,
+        handleRemoveContact,
         handleChange,
         handleSubmit,
     } = useForm(upload, validate);
@@ -22,10 +25,16 @@ const Form = () => {
     return (
         <div className='form-container' onSubmit={handleSubmit} noValidate>
             <ProfileForm values={values} errors={errors} handleChange={handleChange} />
-            <ContactForm values={values} errors={errors} handleChange={handleChange} />
+            <section>
+                <header>Contact Info</header>
+                <div className='contact-form-wrapper'>
+                    {allContactsId.map((i) => (
+                        <ContactForm values={values} errors={errors} handleChange={handleChange} handleRemoveContact={handleRemoveContact} id={i} key={i} />
+                    ))}
+                </div>
+            </section>
             <div>
-                {/* onClick={handleAddContact} */}
-                <button className="button add-contact-btn" >Add Contact</button>
+                <button onClick={handleAddContact} className="button add-contact-btn" >Add Contact</button>
                 <button className="button submit-btn" onClick={handleSubmit}>Save User Profile</button>
             </div>
         </div>
