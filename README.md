@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Welcome To My Effectivate Task!
+In this task, I was required to build a responsive HTML template form with validations.
+The goal is to write a coherent code with a meaningful class name, reusable styles, etc.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The main challenge I faced was a lack of time.
+I required to plan the work and divide it into parts and be able to work late and fast.
 
-## Available Scripts
+During the work, I deepened my knowledge of react-hooks, and start learn how to write tests for the program.
 
-In the project directory, you can run:
+## Thoughts on data storage
+In the task description, there is no reference to the way in which we will keep the information that the client puts into the form
+I was thinking what is the best way to store the information.
 
-### `npm start`
+#### The first option was: json file within the file system.
+The advantage is that it is a simple file that can be used as an example of how I would store my information in a database and I could save multiple users at the same time.
+The downside is that it is an exposed file so on a site where information needs to be stored I would never use a json file to store information, but transfer the information to the server and the server keeps the information securely in the database.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### The second option was: lochal storage.
+The advantage is that it is a small object that refers to the specific client of this computer, that way I can know if it has already filled out the form in the past and what the details were.
+The downside is that I can not create a situation where my local storage will hold multiple users at the same time, always only the user to whom the computer belongs.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### The third option was: airtable.
+The huge advantage of the airtable is tha airtable is a simple and convenient database that runs in the cloud and I can connect directly to my client side.
+This way I have also achieved the capabilities of multiple user management, higher security level, no need for a server.
+The downside is that this required work is bigger, I didn't get to work before in airtable so I will have to spend learning time as well.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Install and run the project
+To run the project you need to download it (the green button),
+After the project is downloaded to the computer, the following command must be written on the command line: "npm install"/"npm i".
+Then to start the project you have to write the following line: "npm start"
