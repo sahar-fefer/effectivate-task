@@ -24,19 +24,19 @@ const Form = () => {
     }
 
     return (
-        <div className={`form-container ${isUpload ? 'is-upload' : ''}`} onSubmit={handleSubmit} noValidate>
+        <div className={`forms-container ${isUpload ? 'is-upload' : ''}`} onSubmit={handleSubmit} noValidate>
             <ProfileForm values={values} errors={errors} handleChange={handleChange} />
             <section>
-                <header>Contact Info</header>
+                <header className='form-header'>Contact Info</header>
                 <div className='contact-form-wrapper'>
                     {allContactsId.map((i) => (
                         <ContactForm values={values} errors={errors} handleChange={handleChange} handleRemoveContact={handleRemoveContact} id={i} key={i} />
                     ))}
                 </div>
             </section>
-            <div>
-                <button onClick={handleAddContact} className="button add-contact-btn" >Add Contact</button>
-                <button className="button submit-btn" onClick={handleSubmit}>Save User Profile</button>
+            <div className='buttons-line'>
+                <button className="add-contact-btn" onClick={handleAddContact}>Add Contact</button>
+                <button className="submit-btn" onClick={handleSubmit}>Save User Profile</button>
             </div>
             {
                 isUpload &&

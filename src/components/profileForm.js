@@ -1,7 +1,7 @@
 const ProfileForm = ({ values, errors, handleChange }) => {
     return (
-        <section>
-            <header>
+        <section className='form-box'>
+            <header className='form-header'>
                 User Profile
             </header>
             <form className='profile-form'>

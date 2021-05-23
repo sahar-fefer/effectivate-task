@@ -1,7 +1,7 @@
 const UploadedPopup = ({ values, allContactsId, handleClear }) => {
     return (
         <div className='popup-container'>
-            <div className='finish-popup'>
+            <div className='uploaded-popup'>
                 <header className='popup-header'>
                     Hello {values['userName']}
                     {
@@ -19,8 +19,8 @@ const UploadedPopup = ({ values, allContactsId, handleClear }) => {
                         ))
                     }
                 </div>
-                <div className='clear-wrapper'>
-                    <button onClick={handleClear} className='button clear'>New Profile</button>
+                <div className='flex-end'>
+                    <button onClick={handleClear} className='clear-btn'>New Profile</button>
                 </div>
             </div>
         </div>
