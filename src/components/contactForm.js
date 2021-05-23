@@ -4,9 +4,8 @@ const ContactForm = ({ values, errors, handleChange, handleRemoveContact, id }) 
     const contactAddress = `contactAddress${id}`;
 
     return (
-        <form className='contact-form form'>
-            <div className='half-field'> {/* <-- find better className  */}
-                <div className='field'>
+        <form className='contact-form'>
+            <div className='half-width-wrapper'>                <div className='field'>
                     <label htmlFor={typeConnection}>Type Of Contact</label>
                     <select id={typeConnection} name={typeConnection} value={values[typeConnection] || 'email'} onChange={handleChange}>
                         <option value="email">Email</option>
@@ -21,7 +20,7 @@ const ContactForm = ({ values, errors, handleChange, handleRemoveContact, id }) 
                     )}
                 </div>
             </div>
-            <div className='half-field'> {/* <-- find better className  */}
+            <div className='half-width-wrapper'>
                 <div className='field'>
                     <label htmlFor={contactAddress}>Email/Phone No.</label>
                     <input type="text" id={contactAddress} name={contactAddress} onChange={handleChange} value={values[contactAddress] || ''} required />
@@ -30,8 +29,8 @@ const ContactForm = ({ values, errors, handleChange, handleRemoveContact, id }) 
                     )}
                 </div>
             </div>
-            <div className='button-wrapper'>
-                <button onClick={() => handleRemoveContact(id)} className="button remove-contact-btn" >Remove</button>
+            <div className='flex-end'>
+                <button onClick={() => handleRemoveContact(id)} className="remove-contact-btn" >Remove</button>
             </div>
         </form>
     );
